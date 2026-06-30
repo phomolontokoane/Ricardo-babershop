@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --background: #FBF8F2;
+    --surface: #F2E8D5;
+    --primary: #334233;
+    --secondary: #566955;
+    --accent: #B8954C;
+    --text: #37443A;
+    --heading: #1E2A22;
+    --border: #D8CCB8;
+
+}
+
+.dark {
+    --background: #1A241D;
+    --surface: #243125;
+    --primary: #334233;
+    --secondary: #566955;
+    --accent: #B8954C;
+    --text: #E7DECF;
+    --heading: #FAF6EE;
+    --border: #465648;
+}
+
+
+@theme inline {
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-primary: var(--primary);
+    --color-accent: var(--accent);
+    --color-text: var(--text);
+    --color-heading: var(--heading);
+    --color-border: var(--border);
+}
+
+body {
+    @apply bg-background text-text
+}
